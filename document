@@ -1,0 +1,21 @@
+Instruções para importar e rodar o projeto
+
+Banco de Dados : PostgreSQL
+
+1 - Criar banco de dados = project-basic
+2 - Restaurar o backup = banco.sql
+3 - Importar projeto com o maven para o eclipse
+4 - Está definido a conexão a base de dados no arquivo persistence.xml no projeto :
+      url : jdbc:postgresql://localhost:5432/project-basic
+      usuario : postgres
+      senha : 123
+5 - Rodar com Tomcat 8 ou superior
+
+6 - Usuários / todos senha = 123
+
+pedro@teste.com - admin(acesso total)
+geraldo@teste.com - inativo
+joao@teste.com - ativo / acesso limitado
+maria@teste.com -ativo / acesso limitado
+
+7 : Exemplo para rodar no browser, no meu caso estou usando a porta 8080 : http://localhost:8080/projeto
