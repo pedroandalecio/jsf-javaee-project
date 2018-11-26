@@ -3,7 +3,7 @@ Instruções para importar e rodar o projeto
 Banco de Dados : PostgreSQL
 
 1 - Criar banco de dados = project-basic
-2 - Restaurar o backup = banco.sql
+2 - Restaurar o backup = banco.backup(https://github.com/pedroandalecio/jsf-javaee-project/blob/master/banco.backup)
 3 - Importar projeto com o maven para o eclipse
 4 - Está definido a conexão a base de dados no arquivo persistence.xml no projeto :
       url : jdbc:postgresql://localhost:5432/project-basic
