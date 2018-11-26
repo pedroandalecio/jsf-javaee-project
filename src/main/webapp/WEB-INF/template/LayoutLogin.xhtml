@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title><ui:insert name="titulo">[PH Project]</ui:insert></title>
+		<h:outputStylesheet library="css" name="sistema.css" />
+		<h:outputScript library="js" name="jquery.maskMoney.js" />
+		
+	</h:head>
+
+	<p:layout fullPage="true">
+		
+		<p:layoutUnit position="north" resizable="false" closable="false" collapsible="false" >
+		
+			<h:body>
+				
+					<p:ajaxStatus styleClass="ajax-status" onsuccess="configurarMoeda()">
+							
+						<f:facet name="start">
+							<h:graphicImage library="images" name="carregando.gif"/>
+						</f:facet>
+							
+						<f:facet name="complete">
+							<h:outputText value=""/>
+						</f:facet>
+							
+					</p:ajaxStatus>
+								
+					<header>
+					
+						<div style="float: right; margin-right: 1%;">
+						
+							<span style="float: right; height: 30px; line-height: 35px; margin-right: 10px; font-size: 12px;"/>
+											
+							<h:form style="display: inline-block">
+								<p:menubar styleClass="menu-sistema">	
+								 	<p:menuitem value="Esqueceu sua senha? Clique aqui." icon="ui-icon-locked" outcome="/RecuperarAcesso"/>
+								</p:menubar>	
+							</h:form>
+										
+						</div>
+						 
+						<div style="float: left; margin-right: 1%;">
+						
+							<span style="float: left; height: 30px; line-height: 35px; margin-right: 10px; font-size: 12px;"/>
+											
+							<h:form style="display: inline-block">
+								<p:menubar styleClass="menu-sistema">			
+								  	<p:menuitem value="Download - - > [Acesso Remoto = Team_Viewer]" url="https://download.teamviewer.com/download/TeamViewer_Setup_pt.exe" icon="ui-icon-arrowthickstop-1-s" target="_blank"/>
+								 </p:menubar>	
+							</h:form>
+										
+						</div>
+						
+						<div style="clear: both"></div>
+						
+					</header>
+						
+					<script>
+						function configurarMoeda() {
+							$(".moeda").maskMoney({ decimal: ",", thousands: ".", allowZero: true });
+						}
+									
+						$(document).ready(function() {
+							configurarMoeda();
+						});
+					</script>
+							
+				</h:body>
+			
+			</p:layoutUnit>
+		 
+			<p:layoutUnit position="south" resizable="false" closable="false" collapsible="false" style="text-align: center;" 
+						  header="Sistema Integrado de Gestão Empresarial">
+			</p:layoutUnit>
+		    
+			<p:layoutUnit position="center">
+			
+				<p:messages autoUpdate="true" closable="true"/>
+			
+				<div>
+					<ui:insert name="corpo"/>
+				</div>
+			
+			</p:layoutUnit>
+		  
+		</p:layout>
+
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+	<persistence-unit name="ProjectBasic-PU" transaction-type="RESOURCE_LOCAL">
+
+		<properties>
+		
+			<!-- DB Driver -->
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> 
+
+			<!-- BD Name -->
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/project-basic" />	
+
+			<!-- DB User -->
+			<property name="javax.persistence.jdbc.user" value="postgres" /> 
+
+			<!-- DB senha -->
+			<property name="javax.persistence.jdbc.password" value="123" /> 
+
+			<!-- DB Dialedct -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" /> 
+
+			<!--  create/ create-drop/ update 
+		 	<property name="hibernate.hbm2ddl.auto" value="update" />   
+		 	-->
+		 	
+			<!-- Show SQL -->
+			<property name="hibernate.show_sql" value="true" />	
+
+			<!-- Show SQL format -->
+			<property name="hibernate.format_sql" value="true" /> 
+		
+		</properties>
+
+	</persistence-unit>
+
+
+</persistence>
